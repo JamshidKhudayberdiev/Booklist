@@ -45,7 +45,7 @@ form.addEventListener('submit', (e) =>{
     if (form.name.value && form.author.value && form.year.value){
         const book = new Book(form.name.value, form.author.value, form.year.value)
         ui.addBook(book)
-        ui.showMessage('success', 'You deleted this books')
+        ui.showMessage('success', 'You added this book')
         
     } else {
         ui.showMessage('warning', 'ERROR!!!')
