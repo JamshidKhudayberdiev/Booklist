@@ -37,7 +37,11 @@ UI.prototype.showMessage = function (type, text){
         htmlMassage.remove()
     }, 3000)
 }
-
+UI.prototype.clear = function () {
+    form.name.value = ''
+    form.author.value = ''
+    form.year.value = ''
+}
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault()
@@ -46,6 +50,7 @@ form.addEventListener('submit', (e) =>{
         const book = new Book(form.name.value, form.author.value, form.year.value)
         ui.addBook(book)
         ui.showMessage('success', 'You added this book')
+        ui.clear()
         
     } else {
         ui.showMessage('warning', 'ERROR!!!')
